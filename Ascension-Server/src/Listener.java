@@ -28,7 +28,7 @@ public class Listener extends Thread {
 				DataOutputStream output = new DataOutputStream(
 						socket.getOutputStream());
 				
-				output.writeBytes("Welcome");
+				output.writeBytes("Welcome\n");
 				Client client = new Client(socket, input, output);
 				clients.add(client);
 				client.start();

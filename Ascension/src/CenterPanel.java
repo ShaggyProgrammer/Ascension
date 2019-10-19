@@ -4,13 +4,13 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-public class Main extends JPanel implements ActionListener {
+public class CenterPanel extends JPanel implements ActionListener {
 
 	private Server server;
 	
 	private JTextArea textarea;
 	
-	public Main(Server server){
+	public CenterPanel(Server server){
 		super();
 		this.server = server;
 		

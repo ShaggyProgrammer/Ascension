@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Ascension {
+public class Client {
 	
 	private static Server server;
 
