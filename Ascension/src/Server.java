@@ -1,14 +1,14 @@
-import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Server {
 	
 		private Socket socket;
-		private BufferedReader input;
+		private Scanner input;
 		private DataOutputStream output;
 		
-		public Server(Socket socket, BufferedReader input, DataOutputStream output) {
+		public Server(Socket socket, Scanner input, DataOutputStream output) {
 			this.socket = socket;
 			this.input = input;
 			this.output = output;
@@ -18,7 +18,7 @@ public class Server {
 			return socket;
 		}
 
-		public BufferedReader getInput() {
+		public Scanner getInput() {
 			return input;
 		}
 

@@ -1,10 +1,8 @@
-import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
-
-import javax.swing.SwingUtilities;
+import java.util.Scanner;
 
 public class Ascension {
 	
@@ -13,12 +11,12 @@ public class Ascension {
 	public static void main(String[] args) {
 		
 		Socket socket = null;
-		BufferedReader input = null;
+		Scanner input = null;
 		DataOutputStream output = null;
 		
 		try {
 			socket = new Socket("127.0.0.1", 8000);
-			input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			input = new Scanner(new InputStreamReader(socket.getInputStream()));
 			output = new DataOutputStream(socket.getOutputStream());
 			
 		} catch (IOException e) {

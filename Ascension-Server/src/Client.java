@@ -2,14 +2,15 @@ import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Client extends Thread {
 	
 	private Socket socket;
-	private BufferedReader input;
+	private Scanner input;
 	private DataOutputStream output;
 	
-	public Client(Socket socket, BufferedReader input, DataOutputStream output) {
+	public Client(Socket socket, Scanner input, DataOutputStream output) {
 		this.socket = socket;
 		this.input = input;
 		this.output = output;
@@ -20,7 +21,7 @@ public class Client extends Thread {
 		return socket;
 	}
 
-	public BufferedReader getInput() {
+	public Scanner getInput() {
 		return input;
 	}
 
@@ -30,13 +31,7 @@ public class Client extends Thread {
 	
 	public void run() {
 		while(!socket.isClosed()) {
-			try {
-				String action = input.readLine();
-				//check the actions
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
+			String action = input.nextLine();
 		}
 	}
 }
