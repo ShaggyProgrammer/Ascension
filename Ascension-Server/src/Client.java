@@ -1,5 +1,7 @@
 import java.io.DataOutputStream;
+import java.io.IOException;
 import java.net.Socket;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Client extends Thread {
@@ -12,7 +14,6 @@ public class Client extends Thread {
 		this.socket = socket;
 		this.input = input;
 		this.output = output;
-		
 	}
 
 	public Socket getSocket() {
@@ -29,7 +30,15 @@ public class Client extends Thread {
 	
 	public void run() {
 		while(!socket.isClosed()) {
-			String action = input.nextLine();
+			try {
+				String action = input.nextLine();
+			} catch(NoSuchElementException e) {
+				try {
+					socket.close();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+			}
 		}
 	}
 }
