@@ -18,9 +18,9 @@ public class Listener extends Thread {
 	public void run() {
 		ServerSocket server = null;
 		try {
-			server = new ServerSocket(8000);
+			server = new ServerSocket(8123);
 			while(true) {
-				System.out.println("Waiting for connection on port 8000");
+				System.out.println("Waiting for connection on port 8123");
 				Socket socket = server.accept();
 				
 				Scanner input = new Scanner(

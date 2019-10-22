@@ -15,7 +15,7 @@ public class Client {
 		DataOutputStream output = null;
 		
 		try {
-			socket = new Socket("127.0.0.1", 8000);
+			socket = new Socket("127.0.0.1", 8123);
 			input = new Scanner(new InputStreamReader(socket.getInputStream()));
 			output = new DataOutputStream(socket.getOutputStream());
 			
@@ -26,5 +26,13 @@ public class Client {
 		server = new Server(socket, input, output);
 		
 		new GUI(server);
+		
+		while(true) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }

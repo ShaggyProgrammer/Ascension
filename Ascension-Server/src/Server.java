@@ -11,7 +11,14 @@ public class Server {
 		//Game game = new Game(clients);
 		//game.start();
 		
-		
+		while(true) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 }

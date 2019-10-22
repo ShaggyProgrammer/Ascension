@@ -25,13 +25,13 @@ public class GUI extends JFrame {
 		main = new CenterPanel(server);
 		//bottom = new ButtonPanel();
 		
-		System.out.println("wtf");
-		
 		setLayout(new BorderLayout());
 		add(top, BorderLayout.NORTH);
 		add(main, BorderLayout.CENTER);
+		
+		top.setMain();
+		
 		validate();
-		top.setGame();
-		validate();
+		pack();
 	}
 }

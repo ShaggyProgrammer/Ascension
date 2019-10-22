@@ -54,7 +54,7 @@ public class TopPanel extends JPanel {
 		
 		//Images
 		try {
-			mainLabelImage = ImageIO.read(new File("./img/Ascension.png"));
+			mainLabelImage = ImageIO.read(new File("./img/MainMenu.png"));
 			lobbyLabelImage = ImageIO.read(new File("./img/Lobby.png"));
 			partyLabelImage = ImageIO.read(new File("./img/Party.png"));
 			p1Image = ImageIO.read(new File("./img/Class/Warrior/Default.png"));
